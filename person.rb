@@ -1,5 +1,5 @@
 class Person
-  def initialize(name = "Unknown", age, parent_permission: true)
+  def initialize(name = 'Unknown', age, parent_permission: true)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -10,7 +10,7 @@ class Person
   attr_reader :id
 
   def is_of_age?
-    @age >= 18 ? true : false
+    @age >= 18
   end
 
   private :is_of_age?
