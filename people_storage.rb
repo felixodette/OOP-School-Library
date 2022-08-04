@@ -28,7 +28,7 @@ module PeopleStorage
     students_file = './students.json'
 
     unless File.exist?(teachers_file) && File.exist?(students_file) && File.read(teachers_file) != '' &&
-      File.read(students_file) != ''
+        File.read(students_file) != ''
       return data
     end
 
