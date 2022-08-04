@@ -14,7 +14,8 @@ module PeopleStorage
       when Teacher
         teachers_data << { id: person.id, age: person.age, specialization: person.specialization, name: person.name }
       when Student
-        students_data << { id: person.id, age: person.age, classroom: person.classroom.label, name: person.name, parent_permission: preson.parent_permission }
+        students_data << { id: person.id, age: person.age, classroom: person.classroom.label, name: person.name,
+                           parent_permission: person.parent_permission }
       end
     end
     File.write(teachers_file, JSON.generate(teachers_data))
@@ -26,7 +27,8 @@ module PeopleStorage
     teachers_file = './teachers.json'
     students_file = './students.json'
 
-    unless File.exist?(teachers_file) && File.exist?(students_file) && File.read(teachers_file) != '' && File.read(students_file) != ''
+    unless File.exist?(teachers_file) && File.exist?(students_file) && File.read(teachers_file) != '' &&
+      File.read(students_file) != ''
       return data
     end
 

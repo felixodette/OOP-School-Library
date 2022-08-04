@@ -24,4 +24,3 @@ module RentalsStorage
     data
   end
 end
-
