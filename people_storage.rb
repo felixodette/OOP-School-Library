@@ -1,7 +1,7 @@
 require 'json'
 
 module PeopleStorage
-  def storage_people(people)
+  def store_people(people)
     teachers_data = []
     students_data = []
     teachers_file = './teachers.json'
@@ -27,10 +27,8 @@ module PeopleStorage
     teachers_file = './teachers.json'
     students_file = './students.json'
 
-    unless File.exist?(teachers_file) &&
-      File.exist?(students_file) &&
-      File.read(teachers_file) != '' &&
-      File.read(students_file) != ''
+    unless File.exist?(teachers_file) && File.exist?(students_file) &&
+      File.read(teachers_file) != '' && File.read(students_file) != ''
       return data
     end
 
@@ -39,7 +37,7 @@ module PeopleStorage
     end
 
     JSON.parse(File.read(students_file)).each do |student|
-      data << Student.new(student['id'], student['age'], student['classroom'],
+      data << Student.new(student['id'], student['age'], student['classroom'], student['name'],
                           parent_permission: student['parent_permission'])
     end
 
