@@ -21,6 +21,6 @@ module BookStorage
         data << Book.new(book['title'], book['author'])
       end
     end
-  data
+    data
   end
 end
