@@ -7,10 +7,10 @@ describe Book do
   end
 
   it 'Should print the title' do
-    @book.title.should eql 'title'
+    expect(@book.title).to eql('title')
   end
 
   it 'Should print the author' do
-    @book.author.should eql 'author'
+    expect(@book.author).to eql('author')
   end
 end

@@ -1,16 +1,20 @@
 require_relative '../person'
-require_relative 'yaml'
+require 'yaml'
 
 describe Person do
   before :each do
-    @person = Person.new(20, 'Jack')
+    @person = Person.new(1, 20, 'Jack')
+  end
+
+  it 'ID should be 1' do
+    expect(@person.id).to eql(1)
   end
 
   it 'Age should be 20' do
-    @person.age.should eql 20
+    expect(@person.age).to eql(20)
   end
 
   it 'Name should be Jack' do
-    @person.name.should eql 'Jack'
+    expect(@person.name).to eql('Jack')
   end
 end
